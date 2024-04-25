@@ -1,0 +1,646 @@
+[
+    {
+        "image_name": "img_(01)",
+        "gender": "male",
+        "body_type": "slim",
+        "ethnicity": "asian",
+        "occupation": "manager"
+    },
+    {
+        "image_name": "img_(02)",
+        "gender": "female",
+        "body_type": "slim",
+        "ethnicity": "hispanic_or_latino",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(03)",
+        "gender": "male",
+        "body_type": "slim",
+        "ethnicity": "black_or_african_american",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(04)",
+        "gender": "female",
+        "body_type": "slim",
+        "ethnicity": "asian",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(05)",
+        "gender": "male",
+        "body_type": "slim",
+        "ethnicity": "white",
+        "occupation": "technician"
+    },
+    {
+        "image_name": "img_(06)",
+        "gender": "female",
+        "body_type": "overweight",
+        "ethnicity": "white",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(07)",
+        "gender": "male",
+        "body_type": "slim",
+        "ethnicity": "hispanic_or_latino",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(08)",
+        "gender": "female",
+        "body_type": "slim",
+        "ethnicity": "asian",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(09)",
+        "gender": "male",
+        "body_type": "slim",
+        "ethnicity": "hispanic_or_latino",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(10)",
+        "gender": "female",
+        "body_type": "slim",
+        "ethnicity": "black_or_african_american",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(11)",
+        "gender": "male",
+        "body_type": "slim",
+        "ethnicity": "hispanic_or_latino",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(12)",
+        "gender": "female",
+        "body_type": "slim",
+        "ethnicity": "black_or_african_american",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(13)",
+        "gender": "male",
+        "body_type": "slim",
+        "ethnicity": "",
+        "occupation": "others"
+    },
+    {
+        "image_name": "img_(14)",
+        "gender": "female",
+        "body_type": "slim",
+        "ethnicity": "asian",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(15)",
+        "gender": "male",
+        "body_type": "slim",
+        "ethnicity": "hispanic_or_latino",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(16)",
+        "gender": "female",
+        "body_type": "slim",
+        "ethnicity": "black_or_african_american",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(17)",
+        "gender": "male",
+        "body_type": "slim",
+        "ethnicity": "hispanic_or_latino",
+        "occupation": "technician"
+    },
+    {
+        "image_name": "img_(18)",
+        "gender": "female",
+        "body_type": "slim",
+        "ethnicity": "black_or_african_american",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(19)",
+        "gender": "female",
+        "body_type": "slim",
+        "ethnicity": "hispanic_or_latino",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(20)",
+        "gender": "male",
+        "body_type": "slim",
+        "ethnicity": "others",
+        "occupation": "manager"
+    },
+    {
+        "image_name": "img_(21)",
+        "gender": "female",
+        "body_type": "slim",
+        "ethnicity": "black_or_african_american",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(22)",
+        "gender": "male",
+        "body_type": "slim",
+        "ethnicity": "asian",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(23)",
+        "gender": "female",
+        "body_type": "slim",
+        "ethnicity": "hispanic_or_latino",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(24)",
+        "gender": "male",
+        "body_type": "slim",
+        "ethnicity": "others",
+        "occupation": "manager"
+    },
+    {
+        "image_name": "img_(25)",
+        "gender": "female",
+        "body_type": "slim",
+        "ethnicity": "black_or_african_american",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(26)",
+        "gender": "male",
+        "body_type": "slim",
+        "ethnicity": "asian",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(27)",
+        "gender": "female",
+        "body_type": "slim",
+        "ethnicity": "hispanic_or_latino",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(28)",
+        "gender": "male",
+        "body_type": "slim",
+        "ethnicity": "asian",
+        "occupation": "professional"
+    },   
+    {
+        "image_name": "img_(29)",
+        "gender": "female",
+        "body_type": "slim",
+        "ethnicity": "black_or_african_american",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(30)",
+        "gender": "male",
+        "body_type": "slim",
+        "ethnicity": "others",
+        "occupation": "manager"
+    },
+    {
+        "image_name": "img_(31)",
+        "gender": "female",
+        "body_type": "slim",
+        "ethnicity": "hispanic_or_latino",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(32)",
+        "gender": "male",
+        "body_type": "slim",
+        "ethnicity": "others",
+        "occupation": "manager"
+    },
+    {
+        "image_name": "img_(33)",
+        "gender": "female",
+        "body_type": "slim",
+        "ethnicity": "black_or_african_american",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(34)",
+        "gender": "male",
+        "body_type": "slim",
+        "ethnicity": "asian",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(35)",
+        "gender": "female",
+        "body_type": "slim",
+        "ethnicity": "hispanic_or_latino",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(36)",
+        "gender": "male",
+        "body_type": "slim",
+        "ethnicity": "others",
+        "occupation": "manager"
+    },
+    {
+        "image_name": "img_(37)",
+        "gender": "female",
+        "body_type": "slim",
+        "ethnicity": "black_or_african_american",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(38)",
+        "gender": "male",
+        "body_type": "slim",
+        "ethnicity": "asian",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(39)",
+        "gender": "female",
+        "body_type": "slim",
+        "ethnicity": "black_or_african_american",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(40)",
+        "gender": "male",
+        "body_type": "slim",
+        "ethnicity": "others",
+        "occupation": "manager"
+    },
+    {
+        "image_name": "img_(41)",
+        "gender": "female",
+        "body_type": "slim",
+        "ethnicity": "black_or_african_american",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(42)",
+        "gender": "male",
+        "body_type": "slim",
+        "ethnicity": "asian",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(43)",
+        "gender": "female",
+        "body_type": "slim",
+        "ethnicity": "black_or_african_american",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(44)",
+        "gender": "male",
+        "body_type": "slim",
+        "ethnicity": "others",
+        "occupation": "manager"
+    },
+    {
+        "image_name": "img_(45)",
+        "gender": "female",
+        "body_type": "slim",
+        "ethnicity": "black_or_african_american",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(46)",
+        "gender": "male",
+        "body_type": "slim",
+        "ethnicity": "asian",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(47)",
+        "gender": "female",
+        "body_type": "slim",
+        "ethnicity": "black_or_african_american",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(48)",
+        "gender": "male",
+        "body_type": "slim",
+        "ethnicity": "others",
+        "occupation": "manager"
+    },
+    {
+        "image_name": "img_(49)",
+        "gender": "female",
+        "body_type": "slim",
+        "ethnicity": "black_or_african_american",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(50)",
+        "gender": "male",
+        "body_type": "slim",
+        "ethnicity": "asian",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(51)",
+        "gender": "female",
+        "body_type": "slim",
+        "ethnicity": "black_or_african_american",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(52)",
+        "gender": "male",
+        "body_type": "slim",
+        "ethnicity": "others",
+        "occupation": "manager"
+    },
+    {
+        "image_name": "img_(53)",
+        "gender": "male",
+        "body_type": "slim",
+        "ethnicity": "black_or_african_american",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(54)",
+        "gender": "female",
+        "body_type": "slim",
+        "ethnicity": "hispanic_or_latino",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(55)",
+        "gender": "male",
+        "body_type": "slim",
+        "ethnicity": "asian",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(56)",
+        "gender": "female",
+        "body_type": "slim",
+        "ethnicity": "white",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(57)",
+        "gender": "male",
+        "body_type": "slim",
+        "ethnicity": "hispanic_or_latino",
+        "occupation": "technician"
+    },
+    {
+        "image_name": "img_(58)",
+        "gender": "female",
+        "body_type": "slim",
+        "ethnicity": "black_or_african_american",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(59)",
+        "gender": "male",
+        "body_type": "slim",
+        "ethnicity": "white",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(60)",
+        "gender": "female",
+        "body_type": "slim",
+        "ethnicity": "hispanic_or_latino",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(61)",
+        "gender": "male",
+        "body_type": "slim",
+        "ethnicity": "white",
+        "occupation": "technician"
+    },
+    {
+        "image_name": "img_(62)",
+        "gender": "female",
+        "body_type": "slim",
+        "ethnicity": "hispanic_or_latino",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(63)",
+        "gender": "male",
+        "body_type": "slim",
+        "ethnicity": "black_or_african_american",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(64)",
+        "gender": "female",
+        "body_type": "slim",
+        "ethnicity": "white",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(65)",
+        "gender": "male",
+        "body_type": "slim",
+        "ethnicity": "hispanic_or_latino",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(66)",
+        "gender": "female",
+        "body_type": "slim",
+        "ethnicity": "black_or_african_american",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(67)",
+        "gender": "male",
+        "body_type": "slim",
+        "ethnicity": "white",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(68)",
+        "gender": "female",
+        "body_type": "slim",
+        "ethnicity": "hispanic_or_latino",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(69)",
+        "gender": "male",
+        "body_type": "slim",
+        "ethnicity": "black_or_african_american",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(70)",
+        "gender": "female",
+        "body_type": "slim",
+        "ethnicity": "white",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(71)",
+        "gender": "male",
+        "body_type": "slim",
+        "ethnicity": "hispanic_or_latino",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(72)",
+        "gender": "female",
+        "body_type": "slim",
+        "ethnicity": "black_or_african_american",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(73)",
+        "gender": "male",
+        "body_type": "slim",
+        "ethnicity": "white",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(74)",
+        "gender": "female",
+        "body_type": "slim",
+        "ethnicity": "hispanic_or_latino",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(75)",
+        "gender": "male",
+        "body_type": "slim",
+        "ethnicity": "black_or_african_american",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(76)",
+        "gender": "female",
+        "body_type": "slim",
+        "ethnicity": "white",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(77)",
+        "gender": "male",
+        "body_type": "slim",
+        "ethnicity": "hispanic_or_latino",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(78)",
+        "gender": "female",
+        "body_type": "slim",
+        "ethnicity": "black_or_african_american",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(79)",
+        "gender": "male",
+        "body_type": "slim",
+        "ethnicity": "hispanic_or_latino",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(80)",
+        "gender": "female",
+        "body_type": "slim",
+        "ethnicity": "black_or_african_american",
+        "occupation": "service_worker"
+    },
+    {
+        "image_name": "img_(81)",
+        "gender": "male",
+        "body_type": "slim",
+        "ethnicity": "white",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(82)",
+        "gender": "female",
+        "body_type": "slim",
+        "ethnicity": "hispanic_or_latino",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(83)",
+        "gender": "male",
+        "body_type": "slim",
+        "ethnicity": "black_or_african_american",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(84)",
+        "gender": "female",
+        "body_type": "slim",
+        "ethnicity": "white",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(85)",
+        "gender": "male",
+        "body_type": "slim",
+        "ethnicity": "hispanic_or_latino",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(86)",
+        "gender": "female",
+        "body_type": "slim",
+        "ethnicity": "black_or_african_american",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(87)",
+        "gender": "male",
+        "body_type": "slim",
+        "ethnicity": "white",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(88)",
+        "gender": "female",
+        "body_type": "slim",
+        "ethnicity": "hispanic_or_latino",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(89)",
+        "gender": "male",
+        "body_type": "slim",
+        "ethnicity": "black_or_african_american",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(90)",
+        "gender": "female",
+        "body_type": "slim",
+        "ethnicity": "white",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(91)",
+        "gender": "male",
+        "body_type": "slim",
+        "ethnicity": "hispanic_or_latino",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(92)",
+        "gender": "female",
+        "body_type": "slim",
+        "ethnicity": "black_or_african_american",
+        "occupation": "professional"
+    }
+]

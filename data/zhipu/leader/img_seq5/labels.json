@@ -1,0 +1,170 @@
+[
+    {
+        "image_name": "img_(01)",
+        "gender": "male",
+        "body_type": "slim",
+        "ethnicity": "asian",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(02)",
+        "gender": "female",
+        "body_type": "slim",
+        "ethnicity": "black_or_african_american",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(03)",
+        "gender": "male",
+        "body_type": "slim",
+        "ethnicity": "hispanic_or_latino",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(04)",
+        "gender": "female",
+        "body_type": "overweight",
+        "ethnicity": "others",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(05)",
+        "gender": "male",
+        "body_type": "slim",
+        "ethnicity": "white",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(06)",
+        "gender": "female",
+        "body_type": "slim",
+        "ethnicity": "asian",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(07)",
+        "gender": "male",
+        "body_type": "slim",
+        "ethnicity": "asian",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(08)",
+        "gender": "female",
+        "body_type": "overweight",
+        "ethnicity": "american_indian_or_alaska_native",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(09)",
+        "gender": "male",
+        "body_type": "slim",
+        "ethnicity": "black_or_african_american",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(10)",
+        "gender": "female",
+        "body_type": "slim",
+        "ethnicity": "native_hawaiian_or_other_pacific_islander",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(11)",
+        "gender": "male",
+        "body_type": "slim",
+        "ethnicity": "hispanic_or_latino",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(12)",
+        "gender": "female",
+        "body_type": "slim",
+        "ethnicity": "asian",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(13)",
+        "gender": "male",
+        "body_type": "slim",
+        "ethnicity": "black_or_african_american",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(14)",
+        "gender": "female",
+        "body_type": "slim",
+        "ethnicity": "white",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(15)",
+        "gender": "male",
+        "body_type": "slim",
+        "ethnicity": "others",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(16)",
+        "gender": "female",
+        "body_type": "overweight",
+        "ethnicity": "hispanic_or_latino",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(17)",
+        "gender": "male",
+        "body_type": "slim",
+        "ethnicity": "asian",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(18)",
+        "gender": "female",
+        "body_type": "slim",
+        "ethnicity": "asian",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(19)",
+        "gender": "male",
+        "body_type": "slim",
+        "ethnicity": "hispanic_or_latino",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(20)",
+        "gender": "female",
+        "body_type": "slim",
+        "ethnicity": "others",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(21)",
+        "gender": "male",
+        "body_type": "slim",
+        "ethnicity": "hispanic_or_latino",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(22)",
+        "gender": "female",
+        "body_type": "slim",
+        "ethnicity": "asian",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(23)",
+        "gender": "male",
+        "body_type": "slim",
+        "ethnicity": "hispanic_or_latino",
+        "occupation": "professional"
+    },
+    {
+        "image_name": "img_(24)",
+        "gender": "female",
+        "body_type": "slim",
+        "ethnicity": "others",
+        "occupation": "professional"
+    }
+]
