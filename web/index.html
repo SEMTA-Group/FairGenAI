@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Application</title>
+    <style>
+        .response-container {
+            margin-top: 20px;
+        }
+        .image-link {
+            display: block;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Send Image Description to Server</h1>
+    <form id="instructionForm">
+        <label for="instruction">Enter Instruction:</label>
+        <input type="text" id="instruction" name="instruction" required>
+        <button type="submit">Send</button>
+    </form>
+    <div id="response" class="response-container"></div>
+    <a id="imageLink" href="" target="_blank" class="image-link" style="display: none;">View Generated Image</a>
+
+    <script>
+        // Event listener for form submission
+        document.getElementById('instructionForm').addEventListener('submit', async function(event) {
+            event.preventDefault();  // Prevent default form submission and page refresh
+
+            const instruction = document.getElementById('instruction').value;
+
+            try {
+                const response = await fetch('http://localhost:5000/process_instruction', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ instruction: instruction })
+                });
+
+                if (response.ok) {
+                    const result = await response.json();
+
+                    // Display the resulting text on the page
+                    const responseElement = document.getElementById('response');
+                    responseElement.textContent = `Response: ${result.response}`;
+
+                    // Optionally display the image link
+                    if (result.image_url) {
+                        const imageLinkElement = document.getElementById('imageLink');
+                        imageLinkElement.href = result.image_url;
+                        imageLinkElement.style.display = 'block';
+                    } else {
+                        document.getElementById('imageLink').style.display = 'none';
+                    }
+                } else {
+                    console.log('Failed to process the instruction. Server responded with:', response.status, response.statusText);
+                    const responseElement = document.getElementById('response');
+                    responseElement.textContent = 'Failed to process the instruction.';
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                const responseElement = document.getElementById('response');
+                responseElement.textContent = 'An error occurred. Please try again.';
+            }
+        });
+    </script>
+</body>
+</html>
