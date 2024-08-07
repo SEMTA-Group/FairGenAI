@@ -1,8 +1,8 @@
-## Simple server that enforces worst-case fairness
+## Simple GenAI web service that enforces worst-case fairness
 
 ### A. Limitations
 
-Currently, we implement "gender fairness" conditional to "poor or economically disabled person". Therefore, if the user demands something else, enforcement will not be triggered. In addition, when the user explicitly demands a female poor person, then enforcement and counting will not be triggered. 
+Currently, we implement "gender fairness" conditional to "successful business leader". Therefore, if the user demands something else, enforcement will not be triggered. In addition, when the user explicitly demands a female, then enforcement and counting will not be triggered. 
 
 ### B. Execute the Application
 
@@ -23,3 +23,7 @@ Currently, we implement "gender fairness" conditional to "poor or economically d
     * In the form, please enter "successful business leader" or of similar kind, as this is the only item now being enforced for fairness. One can change it to others such as "bad cook".  
 
 5. When fairness is enabled, it will explitly notify the user that fairness constraints enforce the generation to be "male" or "female" (for gender fairness), and inform user that they can make the gender explicit, in order not to be enforced. 
+
+### C. Modification
+
+One shall modify the server.py for the condition where fairness shall be enforced, as well as the worst case bound (beta).
