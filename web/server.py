@@ -15,6 +15,7 @@ import torch
 import numpy as np
 import random
 
+import json
 import sys
 
 def set_seed(seed):
@@ -81,12 +82,7 @@ def generate_image_from_text(text, output_path):
 
 
 
-# Change this, if you wish to enforce fairness under some other criteria (e.g., cook).
-conditioned_value = "successful business leader"
 
-
-# Change this, if you wish to enforce fairness to other dimensions
-fairness_group = "demographics"
 
 
 cgvs_map = {
@@ -105,12 +101,6 @@ description_annotation_map = {
     'demographics': False
 }
 
-
-
-
-fairness_cgvs = cgvs_map[fairness_group]
-
-
 def check_prompt_gender(instruction):
     resp = llm.complete(" Answer \"yes\" or \"no\" only. Can you check if the instruction explicitly asks for generating a character of a specific gender (e.g., male)?\n "+instruction)
     print("The prompt asks for gender: "+str(resp))
@@ -126,10 +116,29 @@ query_function_map = {
     'demographics': check_prompt_demographics
 }
 
+with open('config.json', 'r') as file:
+    data = json.load(file)
 
+# Change this, if you wish to enforce fairness under some other criteria (e.g., cook).
+conditioned_value = data.get('fairness_enforcement', {}).get('conditioned_value')
+
+# Change this, if you wish to enforce fairness to other dimensions
+fairness_group = data.get('fairness_enforcement', {}).get('fairness_group')
 
 # If beta = len of fairness_cgvs, then it will lead to round-robin 
-beta = 6
+beta = data.get('fairness_enforcement', {}).get('beta')
+
+print("conditioned_value | fairness_group | beta:")
+print(f"{conditioned_value} | {fairness_group} | {beta}")
+
+
+fairness_cgvs = cgvs_map[fairness_group]
+
+
+
+
+
+
 
 if beta < len(fairness_cgvs):
     err_msg = "The length of the items should at least be as large as the beta value"
