@@ -1,0 +1,7 @@
+{
+    "fairness_enforcement": {
+        "conditioned_value": "successful business leader",
+        "fairness_group": "demographics",
+        "beta": 6
+    }
+}

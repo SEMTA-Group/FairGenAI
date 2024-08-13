@@ -15,6 +15,7 @@ import torch
 import numpy as np
 import random
 
+import json
 import sys
 
 def set_seed(seed):
@@ -61,6 +62,7 @@ def check_prompt_topic(instruction, topic):
     # Placeholder function to call your local LLM
 
     resp = llm.complete("Simply answer yes or no. Is the following instruction about generating textual descriptions related to "+topic+ "?\n" + instruction)
+    print("Result of checking prompt topic: "+str(resp))
     return str(resp)
 
 
@@ -80,26 +82,24 @@ def generate_image_from_text(text, output_path):
 
 
 
-# Change this, if you wish to enforce fairness under some other criteria (e.g., cook).
-conditioned_value = "successful business leader"
 
-
-# Change this, if you wish to enforce fairness to other dimensions
-fairness_group = "gender"
 
 
 cgvs_map = {
     'gender': ["male", "female"],
-    'demographics': ["white", "black", "Indian (native american)", "Asian (e.g., Chinese, Japanese)", "Latino"]
+    'demographics': ["white (Caucasian) ", "black (African American)", "Indian (native American)", "Asian (e.g., Chinese, Japanese)", "Latino"]
 }
 
 image_question_map = {
     'gender':  "For the image, describe the gender of the character. If it looks like male, return \"male\". If it looks like female, return \"female\". Otherwise, return \"other\". Only return one of the three words.",
-    'demographics': "For the image, describe the gender of the character. Use one of the following options, and find the closest one: {white, black, indian, latino, asian}"
+    'demographics': "For the image, describe the demograpgics / ethnicity of the character. Use one of the following options, and find the closest one: {white, black, indian, latino, asian}. If you can't really identify, then use \"other\""
 
 }
-fairness_cgvs = cgvs_map[fairness_group]
 
+description_annotation_map = {
+    'gender': True,
+    'demographics': False
+}
 
 def check_prompt_gender(instruction):
     resp = llm.complete(" Answer \"yes\" or \"no\" only. Can you check if the instruction explicitly asks for generating a character of a specific gender (e.g., male)?\n "+instruction)
@@ -116,8 +116,29 @@ query_function_map = {
     'demographics': check_prompt_demographics
 }
 
+with open('config.json', 'r') as file:
+    data = json.load(file)
+
+# Change this, if you wish to enforce fairness under some other criteria (e.g., cook).
+conditioned_value = data.get('fairness_enforcement', {}).get('conditioned_value')
+
+# Change this, if you wish to enforce fairness to other dimensions
+fairness_group = data.get('fairness_enforcement', {}).get('fairness_group')
+
 # If beta = len of fairness_cgvs, then it will lead to round-robin 
-beta = 4
+beta = data.get('fairness_enforcement', {}).get('beta')
+
+print("conditioned_value | fairness_group | beta:")
+print(f"{conditioned_value} | {fairness_group} | {beta}")
+
+
+fairness_cgvs = cgvs_map[fairness_group]
+
+
+
+
+
+
 
 if beta < len(fairness_cgvs):
     err_msg = "The length of the items should at least be as large as the beta value"
@@ -141,7 +162,7 @@ def process_instruction():
     # Print the received POST data
     print("Received POST data:", data)
     
-    instruction = "Generate a short text describing an example of " +data.get('instruction')+". "
+    instruction = "Generate a short text describing an imaginary example of " +data.get('instruction')+". "
     if not data.get('instruction'):
         return jsonify({'error': 'No instruction provided'}), 400
 
@@ -149,15 +170,16 @@ def process_instruction():
 
     # Check if the prompt is related to the topic, and if user has special requests on the dimension
     prompt_topic = check_prompt_topic(instruction, conditioned_value).strip().lower()
-    print("Prompt topic: "+ prompt_topic)
-    if prompt_topic == "yes":
+    print("The instruction sent by user shall be conditioned to fairness: "+ prompt_topic)
+    if "yes" in prompt_topic:
         fairness_dimension_query = query_function_map[fairness_group](instruction).strip().lower()
-        if fairness_dimension_query == "no":
+        print("Fairness dimension on ("+fairness_group+") included? " + fairness_dimension_query)
+        if "no" in fairness_dimension_query:
             # This means that the user has no special request on the concept group value (e.g., male for gender)
             topic_monitoring = True
 
-
-    enforcement_prompt = ""
+    txt_enforcement_prompt = ""
+    img_enforcement_prompt = ""
     enforced_cgv = ""
 
     if topic_monitoring == True:
@@ -175,19 +197,23 @@ def process_instruction():
                 replacement = random.choice(matching_items)
                 enforced_cgv = replacement
                 print("ENFORCEMENT: Enforcing '{}' based on the condition.".format(replacement))
-                enforcement_prompt = header_description+replacement+tail_description             
+
+                if description_annotation_map[fairness_group] == True:
+                    txt_enforcement_prompt = header_description+replacement+tail_description 
+                
+                img_enforcement_prompt = header_description+replacement+tail_description             
                 break
     else:
         print("The topic shall not be monitored")
 
     # Generate image description
-    llm_response = generate_description_local_llm(instruction + enforcement_prompt)
-
+    llm_response = generate_description_local_llm( txt_enforcement_prompt + instruction + txt_enforcement_prompt)
+    
     # Generate an image using Stable Diffusion
     image_filename = f"{uuid.uuid4()}.png"
     image_path = os.path.join('generated_images', image_filename)
     print(str(image_filename))
-    generate_image_from_text(llm_response + enforcement_prompt, image_path)
+    generate_image_from_text(img_enforcement_prompt + llm_response + img_enforcement_prompt, image_path)
 
     # Perform fainess counter update
     if topic_monitoring == True:
@@ -195,18 +221,26 @@ def process_instruction():
         concept_group_value = ""
 
         if enforced_cgv != "":
+            # Here we are explicitly assuming that the enforcement works so there is no need to double check. 
             concept_group_value = enforced_cgv
         else:
             # Use the vision-based interpreter to check the class
             image_pil = Image.open(image_path)
             enc_image = img_explain_model.encode_image(image_pil)
-            gender = img_explain_model.answer_question(enc_image, image_question_map[fairness_group], tokenizer).strip().lower()
-            if gender in fairness_cgvs:
-                concept_group_value = gender
-            else:
-                err_msg = "The image explaination model produces an answer: "+ gender
+            attribute = img_explain_model.answer_question(enc_image, image_question_map[fairness_group], tokenizer).strip().lower()
+            print("The synthesized image has the attribute: "+attribute)
+            is_contained = False
+            for item in cgvs_map[fairness_group]:
+                # Check if the function's output is a substring of the list item
+                if attribute.lower() in item.lower():
+                    concept_group_value = item
+                    is_contained = True
+                    break
+            if is_contained == False and ("other" not in attribute):
+                err_msg = "The image explaination model produces an answer (apart from other): "+ attribute
                 print(f"Error: {err_msg}", file=sys.stderr)
                 sys.exit(1)
+
         for item in counters:
             if item == concept_group_value:
                 counters[item] = beta
@@ -223,7 +257,6 @@ def process_instruction():
         'response': llm_response + "\n **** Fairness enforcement enabled: "+enforced_cgv +" ****\n",
         'image_url': f"http://localhost:5000/get_image/{image_filename}"
         })
-
 
 
 @app.route('/get_image/<filename>', methods=['GET'])
