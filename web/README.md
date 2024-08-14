@@ -1,8 +1,8 @@
 ## Simple GenAI web service that enforces worst-case fairness
 
-This folder contains a simple webservice where a GPU with 8GB VRAM would be sufficient to run. If needed, modify the server.py to move all computations to the CPU. 
+This folder contains a simple webservice for image synthesis where fairness can be enforced. It is similar to that of ChatGPT + DALLE.3 where internally, an LLM generates the description, followed by calling an image synthesis tool.
 
-Note that as the development of this tool is for concept validation purposes, so the model being used are not of high quality. So the generated images can be ugly when comparing with commercial tools. 
+Note that as the development of this tool is for concept validation purposes, the models being used are not of high quality. Consequently, the generated images can be ugly when comparing with commercial tools. 
 
 ### A. Installation
 
@@ -12,9 +12,9 @@ Apart from [pytorch](https://pytorch.org/get-started/locally/) and [ollama](http
 
 `pip install flask flask_cors llama-index transformers einops pillow diffusers llama-index-llms-ollama`
 
-Finally, have VS Code and install Live Server as extension.
+Have VS Code and install Live Server as extension.
 
-Note that some of the models will be downloaded (e.g., gemma2:2b, moondream2), so be prepared. 
+
 
 ### B. Execute the Application
 
@@ -24,13 +24,17 @@ Note that some of the models will be downloaded (e.g., gemma2:2b, moondream2), s
 
     $ python server.py
 
+    * With the current configuration, a GPU with 8GB VRAM would be sufficient to run. If you need all computation done with CPU, modify the [config.json](config.json) file. 
+
+    * Note that some of the models will be downloaded (e.g., gemma2:2b, moondream2), so be prepared. 
+
 2. Start the LiveServer: Open VS Code and start the Live Server to serve your index.html.
 
     * Important: Disable LiveServer automatic reload of the server upon file change [(link)](https://stackoverflow.com/questions/77120592/how-can-i-prevent-page-reloads-upon-saving-changes-with-the-live-server-extensio), as when the image is generated and stored, without disabling, the reloading will simply erase the display. 
 
-3. Access the Application: Open your browser and navigate to the URL provided by the Live Server (e.g., http://127.0.0.1:5500/index.html).
+3. Access the application: Open your browser and navigate to the URL provided by the Live Server (e.g., http://127.0.0.1:5500/index.html).
 
-4. Test the Application: Each time you submit the form, the application should call the LLM, generate an image using Stable Diffusion, and display both the text response and the generated image as a link.
+4. Test the application: Each time you submit the form, the application should call the LLM, generate an image using Stable Diffusion, and display both the text response and the generated image as a link.
 
     * In the form, please enter "successful business leader" or of similar kind, as this is the only item now being enforced for fairness. One can change it in the config.json to items such as "bad cook".  
 

@@ -2,6 +2,8 @@
     "fairness_enforcement": {
         "conditioned_value": "successful business leader",
         "fairness_group": "demographics",
-        "beta": 6
+        "beta": 6,
+        "diffusion_GPU": true,
+        "image_interpretation_GPU": false
     }
 }
