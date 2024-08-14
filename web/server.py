@@ -31,9 +31,17 @@ def set_seed(seed):
 # Set the seed
 set_seed(42)
 
+# Load config file
+with open('config.json', 'r') as file:
+    data = json.load(file)
+
 # Image synthesis 
 pipeline = DiffusionPipeline.from_pretrained("runwayml/stable-diffusion-v1-5", torch_dtype=torch.float16)
-pipeline.to("cuda")
+if data.get('fairness_enforcement', {}).get('diffusion_GPU'):
+    print("Use GPU for the image synthesis task")
+    pipeline.to("cuda")
+else:
+    print("Use CPU for the image synthesis task")    
 
 # Image interpretation
 model_id = "vikhyatk/moondream2"
@@ -41,11 +49,15 @@ revision = "2024-07-23"
 img_explain_model = AutoModelForCausalLM.from_pretrained(
     model_id, trust_remote_code=True, revision=revision
 )
-# Add .to("cuda") to move the model into GPU (it is too big to have it placed)
+
+if data.get('fairness_enforcement', {}).get('image_interpretation_GPU'):
+    print("Use GPU for the image interpretation task")
+    img_explain_model.to("cuda")
+else:
+    print("Use CPU for the image interpretation task")    
+
 
 tokenizer = AutoTokenizer.from_pretrained(model_id, revision=revision)
-
-
 
 
 app = Flask(__name__)
@@ -116,8 +128,7 @@ query_function_map = {
     'demographics': check_prompt_demographics
 }
 
-with open('config.json', 'r') as file:
-    data = json.load(file)
+
 
 # Change this, if you wish to enforce fairness under some other criteria (e.g., cook).
 conditioned_value = data.get('fairness_enforcement', {}).get('conditioned_value')
